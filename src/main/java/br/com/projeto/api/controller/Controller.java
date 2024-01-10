@@ -3,10 +3,7 @@ package br.com.projeto.api.controller;
 import br.com.projeto.api.model.Cliente;
 import br.com.projeto.api.repository.Repositorio;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,7 +28,11 @@ public class Controller {
         return acao.findAll();
     }
 
-    public
+    /*Editar cliente recebendo o cliente completo.*/
+    @PutMapping("/")
+    public Cliente editar(@RequestBody Cliente c){
+        return acao.save(c);
 
+    }
 
 }
