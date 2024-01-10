@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /*Para Controller de rest */
 @RestController
 public class Controller {
@@ -22,9 +24,11 @@ public class Controller {
     public Cliente cadastrar(@RequestBody Cliente c){
         return acao.save(c);
     }
+
+    /*Listar lista de cliente*/
     @GetMapping("/")
-    public String teste(){
-        return "Hello World!";
+    public Iterable<Cliente> selecionar(){
+        return acao.findAll();
     }
 
 
