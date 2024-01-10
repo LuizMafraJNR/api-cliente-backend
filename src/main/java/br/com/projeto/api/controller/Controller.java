@@ -35,4 +35,10 @@ public class Controller {
 
     }
 
+    /*Remover cliente*/
+    @DeleteMapping("/deletar/{id}")
+    public void remover(@PathVariable long id){
+        acao.deleteById(id);
+    }
+
 }
