@@ -9,6 +9,9 @@ import java.util.List;
 
 /*Para Controller de rest */
 @RestController
+/*Quando o front tentar acessar da erro cross origin. CORS
+* em origins deixar apenas a porta que pode acessar a solicitação.*/
+@CrossOrigin(origins = "*")
 public class Controller {
 
     /*Serve para instanciar o nosso repositorio para reaalizar alguma ação dentro do BDA.
